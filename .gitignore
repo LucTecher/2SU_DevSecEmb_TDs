@@ -9,3 +9,6 @@
 
 # Unignore Dockerfiles
 !Dockerfile
+
+# Unignore Speedrun binary
+!speedrun-*
