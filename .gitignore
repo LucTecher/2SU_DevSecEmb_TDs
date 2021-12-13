@@ -12,3 +12,7 @@
 
 # Unignore Speedrun binary
 !speedrun-*
+
+# Ignore TD2 extracted content
+TD2/extracted_content
+TD2/extracted_content/*

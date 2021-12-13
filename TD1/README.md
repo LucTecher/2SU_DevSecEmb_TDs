@@ -21,7 +21,7 @@ Dans le code désassemblé fourni par objdump, on peut voir la structure d'un if
 Le code machine qui correspond à retourner 1 dans les deux cas est :
 `75 07 B8 01 00 00 00 EB 05 B8 01 00 00 00`
 
-# Binary patching
+## Binary patching
 
 On peut voir que l'octet à modifier est en position 0x11B0 :
 ![](images/if_in_assembly.png)
@@ -29,7 +29,7 @@ On peut voir que l'octet à modifier est en position 0x11B0 :
 On modifie cet octet grâce à la commande dd, et on test le binaire obtenu avec un mot de passe aléatoire. On constate que tout mot de passe est valide :
 ![](images/binary_fix.png)
 
-# Questions
+## Questions
 
 * Quelle différence dans un environnement ARM?
 
