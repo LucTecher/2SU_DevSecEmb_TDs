@@ -29,3 +29,18 @@ On peut voir que l'octet à modifier est en position 0x11B0 :
 On modifie cet octet grâce à la commande dd, et on test le binaire obtenu avec un mot de passe aléatoire. On constate que tout mot de passe est valide :
 ![](images/binary_fix.png)
 
+# Questions
+
+* Quelle différence dans un environnement ARM?
+
+Dans un environnement ARM les instuctions assembleur sont différentes.
+
+* Comprendre le lien les attaques physiques / expliquez quelles sont les attaques par patching possibles sur une boucle for.
+
+On peut imaginer une attaque physique ou un méchant attaquant utilise un aimant ou autre chose pour modifier un bit de la même manière que nous l'avons fait logiciellement.
+
+Une boucle for n'est qu'un if répété, elle contient donc des sauts (JNE ou JE en assembleur) pour lesquels on peut modifier l'addresse du saut. On peut aussi modifier la valeur initiale de la variable qui s'incrémente ou encore la valeur de la variable à laquelle elle est comparée. Ceci modifierait l'execution flow du programme.
+
+* Qu'elle défense est ce que je peux utiliser contre le patching?
+
+On peut établir un Hash du programme juste après sa compilation. Avant d'exécuter le binaire, on le hasherait puis on pourrait comparer ce hash au hash original. S'ils sont différents, cela veut dire que le binaire a été altéré !
