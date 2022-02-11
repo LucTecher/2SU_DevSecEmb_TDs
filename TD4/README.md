@@ -131,11 +131,18 @@ Le projet [mitm-router](https://github.com/brannondorsey/mitm-router) permet de 
 
 ### Installation
 
+`$ git clone https://github.com/brannondorsey/mitm-router`
+`$ cd mitm-router`
 
+Il faut aussi [installer Docker](https://docs.docker.com/engine/install/).
 
 ### Utilisation
 
+Le projet tournera dans un conteneur Docker, il faut donc dans un premier temps créer l'image docker :
 
+`docker build . -t brannondorsey/mitm-router`
+
+Puis il faut lancer un conteneur en prenant soin de mettre l'interface wifi pour la variable `AP_IFACE` et l'interface ethernet pour la variable `INTERNET_IFACE`. Mon ordinateur ne possède pas de carte wifi donc je ne peux pas non plus tester ce projet.
 
 ## Questions
 
@@ -154,3 +161,4 @@ Les interfaces qui doivent être testées en premier sont les interfaces réseau
 3. Quels avantages, inconvénients ont les outils que vous avez choisi ?
 
 Je n'ai pas vraiment réussi à en faire fonctionner... Donc l'inconvénient serait qu'ils ne sont pas toujours fonctionnels ou maintenus. Cependant ils proposent, à priori, la possibilité d'écouter sur les différentes interfaces et pour certains, ils permettent même de forger des paquets.
+Pour le wifi, seul le traffic http est interceptable, ce qui limite la portée de l'attaque étant donné que la majorité du traffic sur internet utilise le protocole https de nos jours.
