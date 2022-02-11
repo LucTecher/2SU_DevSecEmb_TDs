@@ -20,7 +20,7 @@ On concatène le résultat obtenu à notre padding, puis on enregistre le tout d
 
 Pour exécuter l'exploit, on utilise la commande :
 
-`(cat rop.cve; cat) | ./speedrun-001`
+`$ (cat rop.cve; cat) | ./speedrun-001`
 
 On peut ensuite exécuter des commandes root librement :
 
